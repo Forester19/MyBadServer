@@ -29,6 +29,15 @@ const schema = buildSchema(`
     }
     type Mutation {
         createUser(input: UserInput): User
+        setCommonPrefixString(input: CommonPrefixStringInput): CommonPrefixString
+    }
+    type CommonPrefixString {
+        id: ID
+        str: String
+    }
+    input CommonPrefixStringInput {
+        id: ID
+        str: String!
     }
 `);
 

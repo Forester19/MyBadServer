@@ -5,6 +5,7 @@ const schema = require('./schema');
 
 //TODO need to add database.
 const users = [{id: 1, username: 'Vito', age: 10}];
+let startString = '';
 
 const root = {
     getAllUsers: () => {
@@ -18,6 +19,12 @@ const root = {
         const user = {id , ...input};
         users.push(user);
         return user;
+    },
+    setCommonPrefixString: ({input}) => {
+        const id = Date.now();
+        const startString = {id , ...input};
+        console.log("startString " + JSON.stringify(startString));
+        return startString;
     }
 }
 
